@@ -74,3 +74,20 @@ own words.
 - What is `browserlists`
     > It is a config that tells the build tools which borwers we want to support.
 
+Episode-03
+- What is JSX?
+    > JSX -> Java Script XML
+    > It is a HTMl-like or XML-like syntax language
+    > This makes the writing of JS in react easy and compact.
+    > JS engine does not understand JSX it only understands ES6.
+    >JSX code-> React.createElement()->which is a JS object-> converted to HTML element->which then renders to web Page.
+- Superpowers of JSX
+    > Makes react code easy to write and understand.
+    > HTML like syntax
+- Role of type attribute in script tag? What options can I use there?
+    >The type attribute in the script informs what type of script it is and how to handle it.
+    
+- {TitleComponent} vs {<TitleComponent/>} vs {<TitleComponent></TitleComponent>} in JSX
+    > {TitleComponent} → Just a reference to the function, NOT rendering it.
+    > {<TitleComponent/>} → Renders the component (self-closing tag, no children).
+    > {<TitleComponent></TitleComponent>} → Renders the component with potential children inside.

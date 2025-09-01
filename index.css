@@ -5,3 +5,50 @@
     color: blue;
     text-align: center;
 }
+/* Header container */
+#header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* space between logo, search, and user */
+  padding: 10px 20px;
+  background-color: #4cb1e4;
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  font-family: Arial, sans-serif;
+}
+
+/* Logo */
+#header img:first-child {
+  height: 50px;
+  width: auto;
+  cursor: pointer;
+}
+
+/* Search box */
+#header input {
+  width: 300px;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  outline: none;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+#header input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.4);
+}
+
+/* User icon */
+#header img:last-child {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+#header img:last-child:hover {
+  transform: scale(1.05);
+}
