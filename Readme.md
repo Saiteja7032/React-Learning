@@ -91,3 +91,80 @@ Episode-03
     > {TitleComponent} → Just a reference to the function, NOT rendering it.
     > {<TitleComponent/>} → Renders the component (self-closing tag, no children).
     > {<TitleComponent></TitleComponent>} → Renders the component with potential children inside.
+
+Episode-04
+- Is JSX mandatory for React?
+
+    > No. JSX is just syntactic sugar for React.createElement().
+    > You can write React without JSX, but JSX makes the code easier to read and write.
+    > Example without JSX:
+        > React.createElement("h1", null, "Hello");
+
+- Is ES6 mandatory for React?
+
+    > No. React doesn’t require ES6, but most modern React code uses ES6+ features (class, arrow functions, import/export, let/const).
+    > Without ES6, your code can become verbose.
+
+- How can I write comments in JSX?
+    > Use curly braces with /* */ inside JSX.
+        <div>
+        {/* This is a comment */}
+        <h1>Hello</h1>
+        </div>
+
+- What is <React.Fragment></React.Fragment> and <> </> ?
+    > Both are ways to group multiple elements without adding an extra DOM node.
+    > <React.Fragment> → Verbose form.
+    > <> </> → Shorthand (doesn’t support attributes).
+    > Example:
+        <>
+        <h1>Title</h1>
+        <p>Paragraph</p>
+        </>
+
+- What is Virtual DOM?
+    > A lightweight copy of the real DOM kept in memory.
+    > React updates the Virtual DOM first, then efficiently updates only the changed parts in the real DOM.
+    > This makes UI updates faster.
+
+- What is Reconciliation in React?
+    > The process React uses to compare the old Virtual DOM with the new Virtual DOM (using a diffing algorithm).
+    > Based on this, React decides what needs to change in the actual DOM.
+
+- What is React Fiber?
+    > React Fiber is the new reconciliation engine (introduced in React 16).
+    > It enables features like time slicing, suspense, and better rendering performance.
+    > Basically, it helps React handle rendering in a more interruptible and efficient way.
+
+- Why we need keys in React? When do we need keys in React?
+    > Keys help React identify which items changed, added, or removed in a list.
+    > Without keys, React will re-render unnecessarily, causing performance issues.
+    > Needed when rendering lists of elements.
+
+- Can we use index as keys in React?
+    > Yes, but not recommended.
+    > Use index as a key only when:
+    > The list is static (no changes).
+    > No unique IDs are available.
+    > Otherwise, using index can cause bugs in UI updates.
+
+- What is props in React? Ways to use props?
+    > Props = short for properties.
+    > They are used to pass data from parent to child components.
+    > Props are read-only.
+    > Ways to use:
+        function Greeting(props) {
+        return <h1>Hello {props.name}</h1>;
+        }
+// Usage
+<Greeting name="Saiteja" />
+
+- What is a Config Driven UI?
+    > A UI that is generated based on configuration/data (usually JSON) instead of hardcoded elements.
+    > Useful for dynamic forms, dashboards, or menus.
+    > Example:
+
+        [
+        { "type": "text", "label": "Name" },
+        { "type": "email", "label": "Email" }
+        ]
