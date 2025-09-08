@@ -1,6 +1,6 @@
 React Learning Content:
 
-Episode -2
+Episode-02
 - What is `NPM`?
     NPM is a package manager used to install and maintain any packages needed in the project to optimise the react code.
 - What is `Parcel/Webpack`? Why do we need it?
@@ -74,6 +74,8 @@ own words.
 - What is `browserlists`
     > It is a config that tells the build tools which borwers we want to support.
 
+//============================================================================================================
+
 Episode-03
 - What is JSX?
     > JSX -> Java Script XML
@@ -92,7 +94,10 @@ Episode-03
     > {<TitleComponent/>} → Renders the component (self-closing tag, no children).
     > {<TitleComponent></TitleComponent>} → Renders the component with potential children inside.
 
+//============================================================================================================
+
 Episode-04
+
 - Is JSX mandatory for React?
 
     > No. JSX is just syntactic sugar for React.createElement().
@@ -168,3 +173,78 @@ Episode-04
         { "type": "text", "label": "Name" },
         { "type": "email", "label": "Email" }
         ]
+
+//============================================================================================================
+
+Episode-05
+
+- Difference between Named Export, Default Export, and * as Export
+    > Named Export
+        > You can export multiple things by name.
+        > Must import using the same name (inside {}).
+        > Example: 
+            // file.js
+            export const a = 10;
+            export function greet() {}
+
+            import { a, greet } from "./file";
+
+    > Default Export
+        > Only one default export per file.
+        > Can import with any name.
+        > Example:
+            // file.js
+            export default function greet() {}
+
+            import MyFunction from "./file"; // name can be anything
+
+
+    > * as Export (Namespace Import)
+        > Imports everything from a module under a single object.
+        > Example:
+            // file.js
+            export const a = 10;
+            export const b = 20;
+
+            import * as utils from "./file";
+            console.log(utils.a, utils.b);
+
+- Importance of config.js File
+
+    > A centralized file where you store configuration values (API URLs, constants, keys, feature flags).
+    > Makes code clean, reusable, and maintainable.
+    > Easy to switch environments (dev, staging, prod).
+    > Example:
+        // config.js
+        export const API_URL = "https://api.example.com";
+        export const TIMEOUT = 5000;
+
+        // App.js
+        import { API_URL } from "./config";
+
+- What are React Hooks?
+
+    > Hooks are special functions introduced in React 16.8 that let you use state and lifecycle features in functional components.
+    > Examples: useState, useEffect, useContext, useReducer.
+
+- Why do we need a useState Hook?
+
+    > useState lets functional components store and update state (data that changes over time).
+    > Without it, functional components were stateless.
+    > Example:
+        import { useState } from "react";
+
+        function Counter() {
+        const [count, setCount] = useState(0); // state variable
+
+        return (
+            <div>
+            <p>{count}</p>
+            <button onClick={() => setCount(count + 1)}>Increment</button>
+            </div>
+        );
+        }
+Here, count is state, and setCount updates it → triggers re-render.
+
+//============================================================================================================
+
