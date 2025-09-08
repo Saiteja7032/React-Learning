@@ -140,23 +140,793 @@ return (
     </div>
 )
 }
-const RestaurentCard = (props) => {
+
+
+const RestaurentCard = ({restdata}) => {
+    //const {restList} = props; //Destructuring  
+
+    const{cloudinaryImageId, name,costForTwo,cuisines, avgRating} = restdata?.info
     return (
         <div className="restaurant-card">
-            <img className="restaurant-logo" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/FOOD_CATALOG/IMAGES/CMS/2024/9/19/13269d05-5a85-4281-a769-f1c3177bf404_1441e7bd-e897-4200-88fe-10c90840abe6.jpg" alt="restaurant-logo"/>
-            <h3>{props.name}</h3>
-            <h4>{props.cusine}</h4>
-            <h5>4.5 Stars</h5>
+            <img className="restaurant-logo" src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" +
+           cloudinaryImageId
+            }alt="restaurant-logo"/>
+            {/* <h3>{props.name}</h3>
+            <h4>{props.cusine}</h4> */}
+            <h3>{name}</h3>
+            <h4>{costForTwo}</h4>
+            <h5>{cuisines.join(", ")}</h5>
+            <h5>{avgRating}</h5>
         </div>
     )
 }
+
+
+const restList = [
+    {
+    
+      info: {
+        id: "17105",
+        name: "KFC",
+        cloudinaryImageId: "RX_THUMBNAIL/IMAGES/VENDOR/2024/12/9/5cd9018c-0e72-4cbd-8b53-4e0495282338_17105.JPG",
+        locality: "Mehdipatnam",
+        areaName: "Mehdipatnam",
+        costForTwo: "₹400 for two",
+        cuisines: [
+          "Burgers",
+          "Fast Food",
+          "Rolls & Wraps"
+        ],
+        avgRating: 4.1,
+        parentId: "547",
+        avgRatingString: "4.1",
+        totalRatingsString: "36K+",
+        sla: {
+          deliveryTime: 28,
+          lastMileTravel: 2.6,
+          serviceability: "SERVICEABLE",
+          slaString: "25-30 mins",
+          lastMileTravelString: "2.6 km",
+          iconType: "ICON_TYPE_EMPTY"
+        },
+        availability: {
+          nextCloseTime: "2025-09-08 00:45:00",
+          opened: true
+        },
+        badges: {
+          imageBadges: [
+            {
+              imageId: "Rxawards/_CATEGORY-Burger.png",
+              description: "Delivery!"
+            }
+          ]
+        },
+        isOpen: true,
+        type: "F",
+        badgesV2: {
+          entityBadges: {
+            imageBased: {
+              badgeObject: [
+                {
+                  attributes: {
+                    description: "Delivery!",
+                    imageId: "Rxawards/_CATEGORY-Burger.png"
+                  }
+                }
+              ]
+            },
+            textBased: {},
+            textExtendedBadges: {}
+          }
+        },
+        aggregatedDiscountInfoV3: {
+          header: "ITEMS",
+          subHeader: "AT ₹69"
+        },
+        orderabilityCommunication: {
+          title: {},
+          subTitle: {},
+          message: {},
+          customIcon: {}
+        },
+        differentiatedUi: {
+          displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+          differentiatedUiMediaDetails: {
+            mediaType: "ADS_MEDIA_ENUM_IMAGE",
+            lottie: {},
+            video: {}
+          }
+        },
+        reviewsSummary: {},
+        displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+        restaurantOfferPresentationInfo: {},
+        externalRatings: {
+          aggregatedRating: {
+            rating: "4.1",
+            ratingCount: "6.1K+"
+          },
+          source: "GOOGLE",
+          sourceIconImageId: "v1704440323/google_ratings/rating_google_tag"
+        },
+        ratingsDisplayPreference: "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY"
+      },
+      analytics: {
+        context: "seo-data-8f7c7f1a-4e55-4afb-b53c-430c3942b01e"
+      },
+      cta: {
+        link: "https://www.swiggy.com/city/hyderabad/kfc-mehdipatnam-rest17105",
+        text: "RESTAURANT_MENU",
+        type: "WEBLINK"
+      },
+      widgetId: "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo"
+    },
+    {
+    
+      info: {
+        id: "10490",
+        name: "Pizza Hut",
+        cloudinaryImageId: "RX_THUMBNAIL/IMAGES/VENDOR/2025/9/1/04851373-8e8f-4254-af64-919785527369_10490.JPG",
+        locality: "Banjara Hills",
+        areaName: "Banjara Hills",
+        costForTwo: "₹350 for two",
+        cuisines: [
+          "Pizzas"
+        ],
+        avgRating: 4.3,
+        parentId: "721",
+        avgRatingString: "4.3",
+        totalRatingsString: "29K+",
+        sla: {
+          deliveryTime: 48,
+          lastMileTravel: 4.5,
+          serviceability: "SERVICEABLE",
+          slaString: "45-55 mins",
+          lastMileTravelString: "4.5 km",
+          iconType: "ICON_TYPE_EMPTY"
+        },
+        availability: {
+          nextCloseTime: "2025-09-08 01:00:00",
+          opened: true
+        },
+        badges: {
+          imageBadges: [
+            {
+              imageId: "Rxawards/_CATEGORY-Pizza.png",
+              description: "Delivery!"
+            }
+          ]
+        },
+        isOpen: true,
+        type: "F",
+        badgesV2: {
+          entityBadges: {
+            imageBased: {
+              badgeObject: [
+                {
+                  attributes: {
+                    description: "Delivery!",
+                    imageId: "Rxawards/_CATEGORY-Pizza.png"
+                  }
+                }
+              ]
+            },
+            textBased: {},
+            textExtendedBadges: {}
+          }
+        },
+        aggregatedDiscountInfoV3: {
+          header: "ITEMS",
+          subHeader: "AT ₹99"
+        },
+        orderabilityCommunication: {
+          title: {},
+          subTitle: {},
+          message: {},
+          customIcon: {}
+        },
+        differentiatedUi: {
+          displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+          differentiatedUiMediaDetails: {
+            mediaType: "ADS_MEDIA_ENUM_IMAGE",
+            lottie: {},
+            video: {}
+          }
+        },
+        reviewsSummary: {},
+        displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+        restaurantOfferPresentationInfo: {},
+        externalRatings: {
+          aggregatedRating: {
+            rating: "4.0",
+            ratingCount: "3.7K+"
+          },
+          source: "GOOGLE",
+          sourceIconImageId: "v1704440323/google_ratings/rating_google_tag"
+        },
+        ratingsDisplayPreference: "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY"
+      },
+      analytics: {
+        context: "seo-data-8f7c7f1a-4e55-4afb-b53c-430c3942b01e"
+      },
+      cta: {
+        link: "https://www.swiggy.com/city/hyderabad/pizza-hut-banjara-hills-rest10490",
+        text: "RESTAURANT_MENU",
+        type: "WEBLINK"
+      },
+      widgetId: "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo"
+    },
+    {
+      info: {
+        id: "1035580",
+        name: "Chinese Wok",
+        cloudinaryImageId: "RX_THUMBNAIL/IMAGES/VENDOR/2025/1/28/d60a3430-e2c2-41cb-a69d-b7c1e5c3f6f1_1035580.jpg",
+        locality: "Attapur",
+        areaName: "M-Qube Mall",
+        costForTwo: "₹250 for two",
+        cuisines: [
+          "Chinese",
+          "Asian",
+          "Tibetan",
+          "Desserts"
+        ],
+        avgRating: 3.8,
+        parentId: "61955",
+        avgRatingString: "3.8",
+        totalRatingsString: "526",
+        sla: {
+          deliveryTime: 50,
+          lastMileTravel: 7,
+          serviceability: "SERVICEABLE",
+          slaString: "50-60 mins",
+          lastMileTravelString: "7.0 km",
+          iconType: "ICON_TYPE_EMPTY"
+        },
+        availability: {
+          nextCloseTime: "2025-09-07 23:00:00",
+          opened: true
+        },
+        badges: {},
+        isOpen: true,
+        type: "F",
+        badgesV2: {
+          entityBadges: {
+            imageBased: {},
+            textBased: {},
+            textExtendedBadges: {}
+          }
+        },
+        aggregatedDiscountInfoV3: {
+          header: "ITEMS",
+          subHeader: "AT ₹129"
+        },
+        orderabilityCommunication: {
+          title: {},
+          subTitle: {},
+          message: {},
+          customIcon: {}
+        },
+        differentiatedUi: {
+          displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+          differentiatedUiMediaDetails: {
+            mediaType: "ADS_MEDIA_ENUM_IMAGE",
+            lottie: {},
+            video: {}
+          }
+        },
+        reviewsSummary: {},
+        displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+        restaurantOfferPresentationInfo: {},
+        externalRatings: {
+          aggregatedRating: {
+            rating: "--"
+          }
+        },
+        ratingsDisplayPreference: "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY"
+      },
+      analytics: {
+        context: "seo-data-8f7c7f1a-4e55-4afb-b53c-430c3942b01e"
+      },
+      cta: {
+        link: "https://www.swiggy.com/city/hyderabad/chinese-wok-attapur-m-qube-mall-rest1035580",
+        text: "RESTAURANT_MENU",
+        type: "WEBLINK"
+      },
+      widgetId: "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo"
+    },
+    {
+      info: {
+        id: "378344",
+        name: "Theobroma",
+        cloudinaryImageId: "RX_THUMBNAIL/IMAGES/VENDOR/2025/8/14/0c8391c6-ff9b-4745-8c34-c6f905092c6c_378344.JPG",
+        locality: "Banjara Hills",
+        areaName: "Banjara Hills",
+        costForTwo: "₹400 for two",
+        cuisines: [
+          "Desserts"
+        ],
+        avgRating: 4.5,
+        parentId: "1040",
+        avgRatingString: "4.5",
+        totalRatingsString: "4.4K+",
+        sla: {
+          deliveryTime: 32,
+          lastMileTravel: 4.3,
+          serviceability: "SERVICEABLE",
+          slaString: "30-35 mins",
+          lastMileTravelString: "4.3 km",
+          iconType: "ICON_TYPE_EMPTY"
+        },
+        availability: {
+          nextCloseTime: "2025-09-08 00:30:00",
+          opened: true
+        },
+        badges: {
+          imageBadges: [
+            {
+              imageId: "Rxawards/_CATEGORY-Desserts.png",
+              description: "Delivery!"
+            },
+            {
+              imageId: "newg.png",
+              description: "Gourmet"
+            }
+          ]
+        },
+        isOpen: true,
+        type: "F",
+        badgesV2: {
+          entityBadges: {
+            imageBased: {
+              badgeObject: [
+                {
+                  attributes: {
+                    description: "Delivery!",
+                    imageId: "Rxawards/_CATEGORY-Desserts.png"
+                  }
+                },
+                {
+                  attributes: {
+                    description: "Gourmet",
+                    imageId: "newg.png"
+                  }
+                }
+              ]
+            },
+            textBased: {},
+            textExtendedBadges: {}
+          }
+        },
+        aggregatedDiscountInfoV3: {
+          header: "50% OFF",
+          discountTag: "FLAT DEAL"
+        },
+        orderabilityCommunication: {
+          title: {},
+          subTitle: {},
+          message: {},
+          customIcon: {}
+        },
+        differentiatedUi: {
+          displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+          differentiatedUiMediaDetails: {
+            mediaType: "ADS_MEDIA_ENUM_IMAGE",
+            lottie: {},
+            video: {}
+          }
+        },
+        reviewsSummary: {},
+        displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+        restaurantOfferPresentationInfo: {},
+        externalRatings: {
+          aggregatedRating: {
+            rating: "4.0",
+            ratingCount: "265"
+          },
+          source: "GOOGLE",
+          sourceIconImageId: "v1704440323/google_ratings/rating_google_tag"
+        },
+        ratingsDisplayPreference: "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY"
+      },
+      analytics: {
+        context: "seo-data-8f7c7f1a-4e55-4afb-b53c-430c3942b01e"
+      },
+      cta: {
+        link: "https://www.swiggy.com/city/hyderabad/theobroma-banjara-hills-rest378344",
+        text: "RESTAURANT_MENU",
+        type: "WEBLINK"
+      },
+      widgetId: "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo"
+    },
+    {
+      info: {
+        id: "657474",
+        name: "Burger King",
+        cloudinaryImageId: "RX_THUMBNAIL/IMAGES/VENDOR/2025/6/18/ea422e81-79ea-4ffa-b56b-bc0dbc34520d_657474.jpg",
+        locality: "R5 Chambers",
+        areaName: "Mehdipatnam",
+        costForTwo: "₹350 for two",
+        cuisines: [
+          "Burgers",
+          "American"
+        ],
+        avgRating: 4.2,
+        parentId: "166",
+        avgRatingString: "4.2",
+        totalRatingsString: "10K+",
+        sla: {
+          deliveryTime: 25,
+          lastMileTravel: 2.6,
+          serviceability: "SERVICEABLE",
+          slaString: "25-30 mins",
+          lastMileTravelString: "2.6 km",
+          iconType: "ICON_TYPE_EMPTY"
+        },
+        availability: {
+          nextCloseTime: "2025-09-08 04:00:00",
+          opened: true
+        },
+        badges: {
+          imageBadges: [
+            {
+              imageId: "Rxawards/_CATEGORY-Burger.png",
+              description: "Delivery!"
+            }
+          ]
+        },
+        isOpen: true,
+        type: "F",
+        badgesV2: {
+          entityBadges: {
+            imageBased: {
+              badgeObject: [
+                {
+                  attributes: {
+                    description: "Delivery!",
+                    imageId: "Rxawards/_CATEGORY-Burger.png"
+                  }
+                }
+              ]
+            },
+            textBased: {},
+            textExtendedBadges: {}
+          }
+        },
+        aggregatedDiscountInfoV3: {
+          header: "ITEMS",
+          subHeader: "AT ₹59"
+        },
+        orderabilityCommunication: {
+          title: {},
+          subTitle: {},
+          message: {},
+          customIcon: {}
+        },
+        differentiatedUi: {
+          displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+          differentiatedUiMediaDetails: {
+            mediaType: "ADS_MEDIA_ENUM_IMAGE",
+            lottie: {},
+            video: {}
+          }
+        },
+        reviewsSummary: {},
+        displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+        restaurantOfferPresentationInfo: {},
+        externalRatings: {
+          aggregatedRating: {
+            rating: "--"
+          }
+        },
+        ratingsDisplayPreference: "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY"
+      },
+      analytics: {
+        context: "seo-data-8f7c7f1a-4e55-4afb-b53c-430c3942b01e"
+      },
+      cta: {
+        link: "https://www.swiggy.com/city/hyderabad/burger-king-r5-chambers-mehdipatnam-rest657474",
+        text: "RESTAURANT_MENU",
+        type: "WEBLINK"
+      },
+      widgetId: "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo"
+    },
+    {
+      info: {
+        id: "56268",
+        name: "The Belgian Waffle Co.",
+        cloudinaryImageId: "RX_THUMBNAIL/IMAGES/VENDOR/2025/1/17/33479e84-7446-481e-9792-b2699c7598b6_56268.JPG",
+        locality: "Panjagutta",
+        areaName: "Punjagutta",
+        costForTwo: "₹200 for two",
+        cuisines: [
+          "Waffle",
+          "Desserts",
+          "Ice Cream",
+          "Beverages"
+        ],
+        avgRating: 4.6,
+        parentId: "2233",
+        avgRatingString: "4.6",
+        totalRatingsString: "8.4K+",
+        sla: {
+          deliveryTime: 60,
+          lastMileTravel: 6,
+          serviceability: "SERVICEABLE",
+          slaString: "55-65 mins",
+          lastMileTravelString: "6.0 km",
+          iconType: "ICON_TYPE_EMPTY"
+        },
+        availability: {
+          nextCloseTime: "2025-09-07 23:55:00",
+          opened: true
+        },
+        badges: {},
+        isOpen: true,
+        aggregatedDiscountInfoV2: {},
+        type: "F",
+        badgesV2: {
+          entityBadges: {
+            imageBased: {},
+            textBased: {},
+            textExtendedBadges: {}
+          }
+        },
+        orderabilityCommunication: {
+          title: {},
+          subTitle: {},
+          message: {},
+          customIcon: {}
+        },
+        differentiatedUi: {
+          displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+          differentiatedUiMediaDetails: {
+            mediaType: "ADS_MEDIA_ENUM_IMAGE",
+            lottie: {},
+            video: {}
+          }
+        },
+        reviewsSummary: {},
+        displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+        restaurantOfferPresentationInfo: {},
+        externalRatings: {
+          aggregatedRating: {
+            rating: "4.1",
+            ratingCount: "769"
+          },
+          source: "GOOGLE",
+          sourceIconImageId: "v1704440323/google_ratings/rating_google_tag"
+        },
+        ratingsDisplayPreference: "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY"
+      },
+      analytics: {
+        context: "seo-data-8f7c7f1a-4e55-4afb-b53c-430c3942b01e"
+      },
+      cta: {
+        link: "https://www.swiggy.com/city/hyderabad/the-belgian-waffle-co-panjagutta-punjagutta-rest56268",
+        text: "RESTAURANT_MENU",
+        type: "WEBLINK"
+      },
+      widgetId: "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo"
+    },
+    {
+      info: {
+        id: "970628",
+        name: "Olio - The Wood Fired Pizzeria",
+        cloudinaryImageId: "RX_THUMBNAIL/IMAGES/VENDOR/2025/6/17/a3001d91-08ad-41a0-8ae7-24aee19bb074_970628.JPG",
+        locality: "AKSHMI VILLA",
+        areaName: "Himayat Nagar",
+        costForTwo: "₹300 for two",
+        cuisines: [
+          "Pizzas",
+          "Pastas",
+          "Italian",
+          "Fast Food",
+          "Snacks",
+          "Beverages",
+          "Desserts"
+        ],
+        avgRating: 4.3,
+        parentId: "11633",
+        avgRatingString: "4.3",
+        totalRatingsString: "876",
+        sla: {
+          deliveryTime: 49,
+          lastMileTravel: 5,
+          serviceability: "SERVICEABLE",
+          slaString: "45-55 mins",
+          lastMileTravelString: "5.0 km",
+          iconType: "ICON_TYPE_EMPTY"
+        },
+        availability: {
+          nextCloseTime: "2025-09-08 00:00:00",
+          opened: true
+        },
+        badges: {
+          imageBadges: [
+            {
+              imageId: "newg.png",
+              description: "Gourmet"
+            }
+          ]
+        },
+        isOpen: true,
+        type: "F",
+        badgesV2: {
+          entityBadges: {
+            imageBased: {
+              badgeObject: [
+                {
+                  attributes: {
+                    description: "Gourmet",
+                    imageId: "newg.png"
+                  }
+                }
+              ]
+            },
+            textBased: {},
+            textExtendedBadges: {}
+          }
+        },
+        aggregatedDiscountInfoV3: {
+          header: "ITEMS",
+          subHeader: "AT ₹99"
+        },
+        orderabilityCommunication: {
+          title: {},
+          subTitle: {},
+          message: {},
+          customIcon: {}
+        },
+        differentiatedUi: {
+          displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+          differentiatedUiMediaDetails: {
+            mediaType: "ADS_MEDIA_ENUM_IMAGE",
+            lottie: {},
+            video: {}
+          }
+        },
+        reviewsSummary: {},
+        displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+        restaurantOfferPresentationInfo: {},
+        externalRatings: {
+          aggregatedRating: {
+            rating: "--"
+          }
+        },
+        ratingsDisplayPreference: "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY"
+      },
+      analytics: {
+        context: "seo-data-8f7c7f1a-4e55-4afb-b53c-430c3942b01e"
+      },
+      cta: {
+        link: "https://www.swiggy.com/city/hyderabad/olio-the-wood-fired-pizzeria-akshmi-villa-himayat-nagar-rest970628",
+        text: "RESTAURANT_MENU",
+        type: "WEBLINK"
+      },
+      widgetId: "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo"
+    },
+    {
+    
+      info: {
+        id: "662646",
+        name: "Starbucks Coffee",
+        cloudinaryImageId: "RX_THUMBNAIL/IMAGES/VENDOR/2025/8/22/17332b1a-e15c-4c7f-b98c-5f33cc6bf8a0_662646.JPG",
+        locality: "Banjara Hills",
+        areaName: "Banjara Hills",
+        costForTwo: "₹400 for two",
+        cuisines: [
+          "Beverages",
+          "Cafe",
+          "Snacks",
+          "Desserts",
+          "Bakery",
+          "Ice Cream"
+        ],
+        avgRating: 4.4,
+        parentId: "195515",
+        avgRatingString: "4.4",
+        totalRatingsString: "926",
+        sla: {
+          deliveryTime: 33,
+          lastMileTravel: 4.7,
+          serviceability: "SERVICEABLE",
+          slaString: "30-35 mins",
+          lastMileTravelString: "4.7 km",
+          iconType: "ICON_TYPE_EMPTY"
+        },
+        availability: {
+          nextCloseTime: "2025-09-07 23:30:00",
+          opened: true
+        },
+        badges: {
+          imageBadges: [
+            {
+              imageId: "Green%20Dot%20Awards/Best%20In%20Veg%20Cafe.png",
+              description: "Delivery!"
+            },
+            {
+              imageId: "Rxawards/_CATEGORY-Cafe%20&%20Chai.png",
+              description: "Delivery!"
+            }
+          ]
+        },
+        isOpen: true,
+        type: "F",
+        badgesV2: {
+          entityBadges: {
+            imageBased: {
+              badgeObject: [
+                {
+                  attributes: {
+                    description: "Delivery!",
+                    imageId: "Green%20Dot%20Awards/Best%20In%20Veg%20Cafe.png"
+                  }
+                },
+                {
+                  attributes: {
+                    description: "Delivery!",
+                    imageId: "Rxawards/_CATEGORY-Cafe%20&%20Chai.png"
+                  }
+                }
+              ]
+            },
+            textBased: {},
+            textExtendedBadges: {}
+          }
+        },
+        aggregatedDiscountInfoV3: {
+          header: "20% OFF",
+          discountTag: "FLAT DEAL"
+        },
+        orderabilityCommunication: {
+          title: {},
+          subTitle: {},
+          message: {},
+          customIcon: {}
+        },
+        differentiatedUi: {
+          displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+          differentiatedUiMediaDetails: {
+            mediaType: "ADS_MEDIA_ENUM_IMAGE",
+            lottie: {},
+            video: {}
+          }
+        },
+        reviewsSummary: {},
+        displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+        restaurantOfferPresentationInfo: {},
+        externalRatings: {
+          aggregatedRating: {
+            rating: "4.2",
+            ratingCount: "191"
+          },
+          source: "GOOGLE",
+          sourceIconImageId: "v1704440323/google_ratings/rating_google_tag"
+        },
+        ratingsDisplayPreference: "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY"
+      },
+      analytics: {
+        context: "seo-data-8f7c7f1a-4e55-4afb-b53c-430c3942b01e"
+      },
+      cta: {
+        link: "https://www.swiggy.com/city/hyderabad/starbucks-coffee-banjara-hills-rest662646",
+        text: "RESTAURANT_MENU",
+        type: "WEBLINK"
+      },
+      widgetId: "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo"
+    }
+  ];
+
+
 const Body = () => {
     return (
     <div className="body">
         <div className="search">Search</div>
         <div className="restaurant-container">
-            <RestaurentCard name="KFC" cusine="fast food"/>
-            <RestaurentCard name="pistahouse"  cusine="biryani"/>
+        {
+            restList.map((restaurant) => (
+                <RestaurentCard   key={restaurant.info.id} restdata={restaurant}/>
+            ))
+        }
         </div>
         
     </div>
