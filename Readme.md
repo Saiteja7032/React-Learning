@@ -247,4 +247,106 @@ Episode-05
 Here, count is state, and setCount updates it → triggers re-render.
 
 //============================================================================================================
+Episode - 06
 
+
+- What is a Microservice?
+    > An architectural style where an application is built as a collection of small, independent services.
+    > Each service handles a specific business function (e.g., authentication, payment, search).
+    > Services communicate via APIs (like REST, gRPC, or messaging).
+
+    ✅ Pros: Scalable, independently deployable, easier to maintain in large teams.
+
+- What is Monolith architecture?
+    > A single, unified codebase where all features (UI, business logic, database access) are tightly coupled.
+    > Everything runs as one application.
+        ✅ Pros: Simple to start, less deployment overhead.
+        ❌ Cons: Hard to scale and maintain as app grows.
+
+- Difference between Monolith and Microservice
+
+| Feature          | Monolith                    | Microservices                         |
+| ---------------- | --------------------------- | ------------------------------------- |
+| Structure        | One large application       | Many small, independent apps          |
+| Scalability      | Scale entire app            | Scale specific services               |
+| Deployment       | Deploy whole app at once    | Deploy each service independently     |
+| Technology stack | Single stack                | Different stacks per service possible |
+| Failure impact   | One bug can crash whole app | Only that microservice is affected    |
+
+- Why do we need a useEffect Hook?
+    > To handle side effects in function components.
+    > Side effects = code that interacts with outside world (API calls, subscriptions, timers).
+    > Replaces lifecycle methods like componentDidMount, componentDidUpdate, componentWillUnmount.
+   > Example:
+        useEffect(() => {
+        fetchData();
+        }, []); // runs only once after component mounts
+
+- What is Optional Chaining?
+    > A safe way to access nested properties without breaking if something is undefined or null.
+    > Example:
+        const user = { profile: { name: "Teja" } };
+        console.log(user?.profile?.name); // "Teja"
+        console.log(user?.address?.city); // undefined (no error!)
+
+- What is Shimmer UI?
+    > A loading placeholder UI that mimics the shape of content while data is loading.
+    > Gives better UX than showing a blank screen or spinner.
+    > Example: A grey animated rectangle where an image/card will appear.
+
+- Difference between JS Expression and JS Statement
+
+    > Expression → Produces a value. Can be inside JSX.
+        2 + 2;       // 4
+        user.name;   // "Teja"
+
+    > Statement → Performs an action, does not return a value directly.
+        if (x > 0) { console.log("positive"); }
+        for (let i=0; i<5; i++) { ... }
+
+    > In JSX, you can only embed expressions, not statements:
+        <p>{2 + 2}</p>   ✅
+        <p>{if(x) {}} </p> ❌
+
+-  What is Conditional Rendering (with code)?
+    > Rendering UI conditionally based on state/props.
+    > Example: 
+        function UserGreeting({ isLoggedIn }) {
+        return (
+            <div>
+            {isLoggedIn ? <h1>Welcome Back!</h1> : <h1>Please Log in</h1>}
+            </div>
+        );
+        }
+
+-  What is CORS (Cross-Origin Resource Sharing)?
+
+    > A security mechanism in browsers.
+    > Prevents making requests to another domain unless the server allows it.
+    > Example: A React app (localhost:3000) trying to call API at api.example.com.
+    > If server doesn’t set headers like Access-Control-Allow-Origin: *, the browser blocks the request.
+
+- What is async and await?
+
+    > Keywords to handle asynchronous code in a synchronous style.
+        async function fetchData() {
+        const res = await fetch('/api/data');
+        const json = await res.json();
+        console.log(json);
+        }
+
+    > async → makes function return a promise.
+    > await → pauses execution until promise resolves.
+
+- Use of  const json = await data.json();
+
+    > fetch() returns a Response object, not the actual JSON.
+    > .json() parses the response body into a JavaScript object.
+    > await ensures parsing completes before assigning to json.
+
+    > Without it:
+        const data = await fetch("url");
+        console.log(data); // Response object, not usable JSON
+
+        const json = await data.json();
+        console.log(json); // Parsed restaurant data

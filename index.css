@@ -83,10 +83,15 @@
   margin: 10px;
   padding: 10px;
 }
+
+.filter {
+  margin: 20px; 
+}
 .search {
-
   padding: 12px 12px;
-
+  width: 300px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
 }
 .restaurant-card {                                          
   border: 1px solid #ddd;
@@ -115,4 +120,31 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+.shimmer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.shimmer-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  margin: 10px;
+  width: 200px;
+  height: 400px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 37%, #f0f0f0 63%);
+  background-size: 400% 100%;
+  animation: shimmer 1.5s infinite; 
+}
+.login-button {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
 }
