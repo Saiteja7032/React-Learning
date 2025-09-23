@@ -350,3 +350,94 @@ Episode - 06
 
         const json = await data.json();
         console.log(json); // Parsed restaurant data
+
+//====================================================================================================
+React-Router-Dom
+LINK:
+> Link is used to navigate to different pages without reloading the page.
+> In anchor tag, when we click on any link, it reloads the page.
+> But in SPA(Single Page Application), we don't want to reload the page.
+> So, we use Link component from react-router-dom. 
+//====================================================================================================
+Episode - 07
+
+1. What are various ways to add images into our App?
+
+In React, you can add images in multiple ways depending on where they are stored.
+
+(a) Importing image (Webpack/Parcel bundles it)
+import React from "react";
+import logo from "./assets/logo.png";  // inside src/assets folder
+
+function App() {
+  return <img src={logo} alt="Logo" />;
+}
+
+(b) Using public folder (direct path)
+
+Files inside public are not processed by Webpack/Parcel.
+
+function App() {
+  return <img src="/logo.png" alt="Logo" />; // logo.png in public folder
+}
+
+(c) External URL
+function App() {
+  return <img src="https://via.placeholder.com/150" alt="Placeholder" />;
+}
+
+(d) Dynamic image using props/variables
+function App() {
+  const imgName = "logo.png";
+  return <img src={`/images/${imgName}`} alt="Dynamic Logo" />;
+}
+
+2. What would happen if we do console.log(useState())?
+
+useState() returns an array with two elements:
+
+Current state value
+
+A setter function
+
+Example:
+
+const [count, setCount] = useState(0);
+
+console.log(useState()); 
+// 👉 Output: [undefined, ƒ] because we didn’t pass an initial value
+
+
+If you pass a value:
+
+console.log(useState(10));
+// 👉 Output: [10, ƒ]
+
+3. How will useEffect behave if we don't add a dependency array ?
+
+If no dependency array is provided:
+
+useEffect(() => {
+  console.log("Effect runs");
+});
+
+
+👉 This will run after every render (initial + re-renders).
+So if state updates, it will run again.
+
+4. What is SPA?
+
+SPA = Single Page Application
+
+A web application where the browser loads a single HTML file (index.html) once.
+
+Navigation between pages doesn’t reload the page; instead, React (or Angular/Vue) dynamically updates the content.
+
+Example: Gmail, Facebook.
+
+5. What is difference between Client Side Routing and Server Side Routing?
+Feature	Server Side Routing	Client Side Routing
+How it works	Browser requests a new page from server every time	App loads once, React Router handles navigation without refreshing
+Performance	Slower (full page reload)	Faster (only updates components)
+SEO	Better SEO (HTML comes from server)	Needs SSR for good SEO
+Example	Traditional PHP/Java apps	React, Angular, Vue apps
