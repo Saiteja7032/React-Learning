@@ -2,17 +2,15 @@ import { useState, useEffect } from "react";
 import RestaurentCard from "./RestaurentCard";
 //import restList from "../utils/mockData";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 const Body = () => {
     const [listofRestaurents, setListofRestaurents] = useState([]);
     const [filteredRestaurents, setFilteredRestaurents] = useState([]);
     const [searchText, setSearchText] = useState("");
-   // const [page, setPage] = useState(1); // Track page or offset for pagination==========
-    //const [loading, setLoading] = useState(false);===========
+
     useEffect(() => {
         fetchData();
-         // Attach scroll event
-        // window.addEventListener("scroll", handleScroll);===================
-        // return () => window.removeEventListener("scroll", handleScroll);===================
+        
     }, []);
 
     const fetchData=async () => {
@@ -62,7 +60,7 @@ const Body = () => {
         <div className="restaurant-container">
         {
             filteredRestaurents.map((restaurant) => (
-                <RestaurentCard   key={restaurant.info.id} restdata={restaurant}/>
+                <Link to={"/restaurents/"+ restaurant.info.id} key={restaurant.info.id}><RestaurentCard  restdata={restaurant}/></Link>
             ))
         }
         </div> 
@@ -73,33 +71,4 @@ const Body = () => {
 export default Body;
 
 // Infinite scroll POST fetch===================
-    // const fetchMore = async () => {
-    //     setLoading(true);
-    //     const response = await fetch("https://www.swiggy.com/dapi/restaurants/list/update", {
-    //         method: "POST",
-    //         headers: { "Content-Type": "application/json" },
-    //         body: JSON.stringify({
-    //             lat: 17.38430,
-    //             lng: 78.45830,
-    //             // Add more params if needed
-    //         }),
-    //     });
-    //     const json = await response.json();
-    //     const more = json?.data?.cards?.[0]?.card?.card?.gridElements?.infoWithStyle?.restaurants || [];
-    //     setListofRestaurents(prev => [...prev, ...more]);
-    //     setFilteredRestaurents(prev => [...prev, ...more]);
-    //     setLoading(false);
-    // };
-
-    // // Detect scroll to bottom
-    // const handleScroll = () => {
-    //     if (
-    //         window.innerHeight + window.scrollY >= document.body.offsetHeight - 100 && !loading
-    //          ) {
-    //         fetchMore();
-    //     }
-    // };==============================
-   //Conditional Rendering
-//    if(listofRestaurents.length== 0) {
-//         return <Shimmer/>;
-//    }
+   

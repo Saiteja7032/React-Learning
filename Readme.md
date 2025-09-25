@@ -441,3 +441,19 @@ How it works	Browser requests a new page from server every time	App loads once, 
 Performance	Slower (full page reload)	Faster (only updates components)
 SEO	Better SEO (HTML comes from server)	Needs SSR for good SEO
 Example	Traditional PHP/Java apps	React, Angular, Vue apps
+
+//====================================================================================================
+Episode - 08
+why do we use super(props) in class based components?
+
+    By writing super(props), the props are passed to the React.Component constructor.
+    This makes this.props available inside your constructor.
+
+    For example:
+
+        class MyComponent extends React.Component {
+        constructor(props) {
+            super(props);
+            console.log(this.props); // ✅ works
+        }
+        }
